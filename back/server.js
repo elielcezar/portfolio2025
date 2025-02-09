@@ -11,7 +11,7 @@ const app = express();
 
 // Configuração do CORS
 app.use(cors({
-    origin: ['https://eliel.dev', 'http://localhost:5173'], // permite tanto produção quanto desenvolvimento
+    origin: ['https://eliel.dev', 'http://localhost:5173', 'http://localhost:5174'], // permite tanto produção quanto desenvolvimento
     credentials: true
 }));
 

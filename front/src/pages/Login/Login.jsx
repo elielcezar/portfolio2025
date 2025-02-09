@@ -48,7 +48,7 @@ export default function Login() {
             
             {confirmationMessage ? <p className="confirmation-message">{confirmationMessage}</p> : null}
 
-            <form>                                                                    
+            <form className={styles.loginForm}>                                                                    
                 <div className="form-item">                       
                     <input type="text" name="email" className="email" ref={inputEmail} placeholder="Email"></input>
                 </div>               
