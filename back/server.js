@@ -3,10 +3,6 @@ import cors from 'cors';
 import publicRoutes from './routes/public.js';
 import privateRoutes from './routes/private.js';
 import auth from './middlewares/auth.js';
-import dotenv from 'dotenv';
-
-// Carrega as variáveis de ambiente
-dotenv.config();
 
 const app = express();
 
