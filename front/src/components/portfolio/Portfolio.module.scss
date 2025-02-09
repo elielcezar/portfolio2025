@@ -1,0 +1,120 @@
+@import '../../variables';
+
+.mainPortfolio {
+    background: $deepBlack;
+    padding: 70px 0 0 0;
+
+    @media(orientation:portrait) {
+        overflow: hidden;
+        padding: 50px 0 0 0;
+    }
+
+    .container {
+        max-width: 1260px;
+    }
+
+    .lista {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 100%;
+
+        .item {
+            width: 100%;
+            margin: 0 0 100px 0;
+            padding: 0 20px;
+            background: #1c1e2d;
+            border-radius: 10px;
+            display: flex;
+            transition: all .3s;
+
+            @media(orientation:portrait) {
+                width: 100% !important;
+                flex-direction: column !important;
+            }
+
+            &:nth-child(even) {
+                flex-direction: row-reverse;
+            }
+
+            &:hover {
+                background: #2a2d43;
+            }
+
+            &:nth-child(3n) {
+                margin: 0 0 100px 0
+            }
+
+            .itemImg {
+                width: 100%;
+
+                @media(orientation:portrait) {
+                    width: 100%;
+                }
+
+                img {
+                    max-width: 100%;
+                    margin: -40px 0 0 0;
+
+                    @media(orientation:portrait) {
+                        margin: -40px auto 0 -5%;
+                        max-width: 110%;
+                    }
+                }
+            }
+
+            .itemContent {
+                width: 100%;
+                padding: 40px;
+
+                @media(orientation:portrait) {
+                    width: 100%;
+                    padding: 0 5px 30px 5px;
+                }
+
+                h3.itemTitle {
+                    color: #fff;
+                    font-size: 2.5rem;
+                    font-weight: 700;
+                    margin: 0 0 20px 0;
+
+                    @media(orientation:portrait) {
+                        margin: 20px 0;
+                        line-height: 1;
+                    }
+                }
+
+                .itemDescription {
+                    color: #d1d1d1;
+                    font-size: 1rem;
+                    line-height: 1.5rem;
+                    margin-bottom: 40px;
+                }
+
+                a.btn{
+                    border: 2px solid #d1d1d1;
+                    color: #d1d1d1;
+                    background: transparent;
+                    //transition: all .3s;
+
+                    &:hover {
+                        //background: linear-gradient(47deg, rgba(70,64,215,1) 0%, rgba(187,34,230,1) 49%, rgb(255, 238, 0) 100%);
+                        //border: 2px solid $deepGrey;
+                        //color: #fff;  
+                        padding-left: 20px;  
+                        border: 2px solid #fff;
+                        //margin-top: -2px;   
+                        background: #fff;                  
+                        color: $deepBlack;
+                        
+                        svg{
+                            transition: all .3s;
+                            margin-left: 30px !important;                            
+                        }
+                    }  
+                    
+                    
+                }                
+            }
+        }
+    }
+}

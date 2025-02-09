@@ -1,0 +1,207 @@
+@import '../../variables';
+
+.sobre {
+  padding: 50px 0;
+  color: #000;  
+
+  @media(orientation:portrait){
+    overflow-x: hidden;
+    padding: 0;
+  }
+
+  .row {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .title {
+    margin-bottom: 40px;
+  }
+
+  .resumo {
+    margin: auto;
+    max-width: 1160px;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 1.25rem;
+    line-height: 2rem;
+    color: $black;
+
+    strong {
+      font-weight: 800;
+    }
+  }
+
+
+  .item {
+    width: 50%;
+    padding: 2% 0;
+    display: flex;
+    color: #000;
+    line-height: 24px;
+    display: grid;
+
+    @media(orientation:portrait) {
+      width: 100%;      
+      display: flex;      
+      flex-direction: column;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .icon {
+      grid-area: icon;    
+
+      svg {
+        width: 100% !important;
+      }
+    }
+
+    h4 {
+      color: #e7256d;
+      margin: 0 0 5px 0;
+      font-size: 21px;
+      grid-area: title;
+      font-size: 24px;
+      font-weight: 700;
+    }
+
+    p {
+      width: 90%;
+      color: $black;
+      margin: 0;
+      grid-area: text;
+      font-size: 1.25rem;
+      line-height: 2rem;
+
+      @media(orientation:portrait) {
+        width: 100%;        
+      }
+    }
+
+    grid-template-areas: 'icon title'
+    'icon text'
+    ;
+    grid-template-columns: 20% 80%;
+
+  }
+
+}
+
+
+
+section#marquee {
+  overflow-x: hidden;
+  overflow-x: clip;
+  //background: $black;  
+  margin-bottom: -20px;
+
+  display: none;
+
+  .container {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 5;
+  }
+  
+  .aSectionMarqueeBox {
+    width: 110%;
+    margin-left: -5%;
+    //height: 100px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;  
+    //background: $deepBlack;    
+    background: -webkit-linear-gradient(45deg, #4640d7, #bc22e6 30%, #ffd600 80%);
+    transform: rotate(3deg);
+  
+    @media(orientation:portrait){
+        height: 80px;
+    }
+  
+    h2 {
+        white-space: nowrap;
+        text-transform: uppercase;
+        font-size: 2rem;
+        flex-shrink: 0;
+        padding: 0;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        transform: translateX(0);
+        animation: aTextScroll 40s linear infinite;
+        color: #fff;      
+  
+        @media(orientation:portrait){
+            font-size: 3rem;
+        }
+    
+        span {
+            padding: 0 50px;
+            display: inline-block;
+        }
+    }
+  }
+  
+  .bSectionMarqueeBox {
+    width: 110%;
+    margin-left: -5%;
+    margin-top: -40px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;  
+    background: #f5f5f5;
+    transform: rotate(-1deg);
+    box-shadow: 0 0 15px rgba(0,0,0,.2);
+  
+    h2 {
+        white-space: nowrap;
+        text-transform: uppercase;
+        color: $deepBlack;
+        font-size: 1.75em;
+        font-weight: 300;
+        flex-shrink: 0;
+        padding: 0;
+        margin: 0;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        transform: translateX(0);
+        animation: bTextScroll 30s linear infinite;
+    
+        span {
+            padding: 0 50px;
+            display: inline-block;
+        }
+    }
+  }  
+  
+}
+
+@keyframes aTextScroll {
+  0% {
+      transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(0, 0, 0);
+  }
+}  
+
+@keyframes bTextScroll {
+  0% {
+      transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(-100%, 0, 0);
+  }    
+}
+

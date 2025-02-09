@@ -1,0 +1,229 @@
+@import '../../variables';
+
+.contato {
+  padding: 100px 0 50px 0;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+
+  @media(orientation:portrait){
+    padding: 40px 0;
+  }
+
+  .container {
+    max-width: 550px;
+    text-align: center;        
+
+    h3 {
+      font-size: 2.5rem;
+      line-height: 3rem;      
+      color: $deepBlack;
+      letter-spacing: -1px;
+      color: $black;
+      text-transform: uppercase;
+      letter-spacing: -2px;
+      max-width: 450px;
+      background: #fff;
+      margin: auto;
+      position: relative;
+      z-index: 10;      
+      margin-bottom: -130px;
+      padding: 20px;      
+      box-shadow: 0 0 50px 50px rgba(256,256,256,1);
+
+      @media(orientation:portrait){
+        font-size: 2rem;
+        line-height: 2rem;
+        z-index: 1;      
+        margin-bottom: -30px;
+      }
+    }
+
+    p.chamada {
+      line-height: 28px;
+      font-size: 21px;
+      margin: 0 0 40px 0;          
+    }    
+  }   
+
+  .info{
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    z-index: 15;
+    p {      
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: $black;
+
+      span {
+        display: inline-block;
+        min-height: 30px;
+        display: flex;
+        align-items: center;
+        max-width: 80%;
+      }
+
+      svg, img {
+        margin-right: 5px;
+        margin-bottom: -4px;
+      }
+    }
+    .telefone1,
+    .telefone2 {
+      img {
+        max-width: 25px;        
+      }
+      a{
+        text-decoration: none;
+        color: #000;
+
+        &:hover{
+          color: #1f9010;
+        }
+      }
+    }
+    .telefone1{
+      @media(orientation:landscape){
+        display: none;
+      }
+    }
+    .telefone2{
+      @media(orientation:portrait){
+        display: none;
+      }
+    }
+  }
+}
+
+
+section#marquee {
+  overflow-x: hidden;
+  overflow-x: clip;  
+
+  @media(orientation:landscape){
+    margin-bottom: 90px;
+  }
+
+  .container {
+    padding: 0;
+    width: 100%;
+    max-width: 100%;
+    position: relative;
+    z-index: 5;    
+  }
+  
+  .aSectionMarqueeBox {
+    width: 110%;
+    margin-left: -5%;     
+    display: flex;
+    align-items: center;
+    overflow: hidden;           
+    background: #fff;    
+    box-shadow: 0 0 1px rgba(0,0,0,.2);
+    opacity: .97;    
+    
+    @media(orientation:landscape){
+      transform: rotate(6deg);
+      height: 70px;   
+      //box-shadow: 0 0 15px rgba(0,0,0,.2);
+    }  
+  
+    h2 {
+      white-space: nowrap;
+      text-transform: uppercase;
+      color: $deepBlack;
+      font-size: 1.25em;
+      font-weight: 300;
+      flex-shrink: 0;
+      padding: 0;
+      margin: 0;
+      width: max-content;
+      display: flex;
+      align-items: center;
+      transform: translateX(0);
+      animation: aTextScroll 20s linear infinite;   
+  
+        @media(orientation:portrait){
+            font-size: 1.5rem;
+        }
+    
+        span {
+            padding: 0 25px;
+            display: inline-block;
+        }
+    }
+  }
+  
+  .bSectionMarqueeBox {
+    width: 110%;
+    margin-left: -5%;        
+    display: flex;
+    align-items: center;
+    overflow: hidden;  
+    background: #fff;    
+    box-shadow: 0 0 1px rgba(0,0,0,.2);
+    opacity: .97;
+
+    @media(orientation:landscape){
+      transform: rotate(-6deg);
+      margin-top: -75px;
+      height: 70px;
+      //box-shadow: 0 0 15px rgba(0,0,0,.2);
+    }
+  
+    h2 {
+        white-space: nowrap;
+        text-transform: uppercase;
+        color: $deepBlack;
+        font-size: 1.25em;
+        font-weight: 300;
+        flex-shrink: 0;
+        padding: 0;
+        margin: 0;
+        width: max-content;
+        display: flex;
+        align-items: center;
+        transform: translateX(0);
+        animation: bTextScroll 20s linear infinite;
+
+        @media(orientation:portrait){
+            font-size: 1.5rem;
+        }
+    
+        span {
+            padding: 0 25px;
+            display: inline-block;
+        }
+    }
+  }  
+    
+  .card{
+    border: 1px solid blue;
+  }
+
+  
+}
+
+@keyframes aTextScroll {
+  0% {
+      transform: translate3d(-100%, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(0, 0, 0);
+  }
+}  
+
+@keyframes bTextScroll {
+  0% {
+      transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+      transform: translate3d(-100%, 0, 0);
+  }    
+}
+

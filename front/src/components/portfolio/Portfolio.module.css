@@ -1,0 +1,103 @@
+.mainPortfolio {
+  background: #0d1117;
+  padding: 70px 0 0 0;
+}
+@media (orientation: portrait) {
+  .mainPortfolio {
+    overflow: hidden;
+    padding: 50px 0 0 0;
+  }
+}
+.mainPortfolio .container {
+  max-width: 1260px;
+}
+.mainPortfolio .lista {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+.mainPortfolio .lista .item {
+  width: 100%;
+  margin: 0 0 100px 0;
+  padding: 0 20px;
+  background: #1c1e2d;
+  border-radius: 10px;
+  display: flex;
+  transition: all 0.3s;
+}
+@media (orientation: portrait) {
+  .mainPortfolio .lista .item {
+    width: 100% !important;
+    flex-direction: column !important;
+  }
+}
+.mainPortfolio .lista .item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.mainPortfolio .lista .item:hover {
+  background: #2a2d43;
+}
+.mainPortfolio .lista .item:nth-child(3n) {
+  margin: 0 0 100px 0;
+}
+.mainPortfolio .lista .item .itemImg {
+  width: 100%;
+}
+@media (orientation: portrait) {
+  .mainPortfolio .lista .item .itemImg {
+    width: 100%;
+  }
+}
+.mainPortfolio .lista .item .itemImg img {
+  max-width: 100%;
+  margin: -40px 0 0 0;
+}
+@media (orientation: portrait) {
+  .mainPortfolio .lista .item .itemImg img {
+    margin: -40px auto 0 -5%;
+    max-width: 110%;
+  }
+}
+.mainPortfolio .lista .item .itemContent {
+  width: 100%;
+  padding: 40px;
+}
+@media (orientation: portrait) {
+  .mainPortfolio .lista .item .itemContent {
+    width: 100%;
+    padding: 0 5px 30px 5px;
+  }
+}
+.mainPortfolio .lista .item .itemContent h3.itemTitle {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+@media (orientation: portrait) {
+  .mainPortfolio .lista .item .itemContent h3.itemTitle {
+    margin: 20px 0;
+    line-height: 1;
+  }
+}
+.mainPortfolio .lista .item .itemContent .itemDescription {
+  color: #d1d1d1;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 40px;
+}
+.mainPortfolio .lista .item .itemContent a.btn {
+  border: 2px solid #d1d1d1;
+  color: #d1d1d1;
+  background: transparent;
+}
+.mainPortfolio .lista .item .itemContent a.btn:hover {
+  padding-left: 20px;
+  border: 2px solid #fff;
+  background: #fff;
+  color: #0d1117;
+}
+.mainPortfolio .lista .item .itemContent a.btn:hover svg {
+  transition: all 0.3s;
+  margin-left: 30px !important;
+}/*# sourceMappingURL=Portfolio.module.css.map */

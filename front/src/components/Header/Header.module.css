@@ -1,0 +1,82 @@
+header {
+  border-bottom: 2px solid #eee;
+  width: 100%;
+  background: #fff;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
+  transform: translateY(-100%);
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (orientation: portrait) {
+  header .container {
+    flex-direction: column;
+    margin: 0;
+    padding: 15px 0;
+    width: 100%;
+  }
+}
+header .container h1 {
+  width: 220px;
+  margin: 0;
+  font-size: 2.5rem;
+  letter-spacing: -2px;
+  text-indent: -5000em;
+  background: transparent url(../../assets/elielcezar.svg?v2) center no-repeat;
+}
+@media (orientation: portrait) {
+  header .container nav {
+    margin: 2px 0 0 0;
+  }
+}
+header .container nav ul {
+  display: flex;
+  list-style-type: none;
+}
+@media (orientation: portrait) {
+  header .container nav ul {
+    padding: 0;
+  }
+}
+header .container nav ul li {
+  margin-left: 5px;
+}
+header .container nav ul li a {
+  color: #3c3c43;
+  display: inline-block;
+  padding: 9px 20px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+@media (orientation: portrait) {
+  header .container nav ul li a {
+    padding: 9px 8px;
+  }
+}
+@media (orientation: landscape) {
+  header .container nav ul li a:hover {
+    background: #0d1117;
+    color: #fff;
+  }
+}
+header .container nav ul li a.social {
+  padding: 7px;
+  font-weight: 700;
+  margin: 2px 0 0 5px;
+}
+header .container nav ul li a svg {
+  margin-bottom: -5px;
+}
+
+header.show {
+  transform: translateY(0);
+}/*# sourceMappingURL=Header.module.css.map */

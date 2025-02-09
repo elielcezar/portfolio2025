@@ -1,0 +1,117 @@
+@import '../../variables';
+
+.top {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 150px 0;
+  //background: url(../../assets/bg-top2.png) 85% 17px no-repeat;
+
+  @media(orientation:portrait) {
+    padding: 100px 0 0 0;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    background: url(../../assets/bg-top2.png) 0 0 repeat;    
+    width: 690px;
+    height: 677px;
+    top: 15px;
+    right: 0%;
+    background-size: cover; 
+    
+    @media(orientation:landscape) and (min-width:1500px){
+      top: 50px;
+      height: 800px;
+      transform: rotate(-30deg);
+      background: url(../../assets/bg-top3.png) 0 0 repeat;    
+    }
+    
+    @media(orientation:landscape) and (max-width:1500px){
+      right: 0;
+      width: 45%;
+    }
+
+    @media(orientation:portrait) {
+      display: none;
+    }
+  }
+
+  img {
+    max-width: 120px;
+
+    @media(orientation:portrait) {
+      max-width: 150px;
+    }
+  }
+
+  h1 {
+    margin: 20px 0 40px 0;
+    letter-spacing: -1px;
+    font-weight: 800;
+    color: #111;
+    max-width: 50%;
+    font-size: 2.75rem;
+    line-height: 3.25rem;
+
+    @media(orientation:landscape) and (min-width:1450px) {
+      font-size: 3rem;
+      line-height: 3.25rem;
+      margin: 20px 0 40px 0;
+      max-width: 42%;
+    }
+
+    @media(orientation:portrait) {      
+      max-width: 100%;
+      text-align: center;
+      font-size: 1.6rem;
+      line-height: 1.9rem;
+      font-weight: 700;
+    }
+  }
+
+  .cta {
+    width: 100%;
+    max-width: 55%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start;
+
+    @media(orientation:portrait) {
+      flex-direction: column;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    a.btn {
+      background: #fff;
+      color: $deepGrey;
+      border: 2px solid $deepGrey;      
+      padding: 15px 20px;
+      font-size: 16px;
+      font-weight: 800;
+
+      @media(orientation:landscape) {
+        margin-right: 20px;
+      }
+      @media(orientation:portrait) {
+        margin-bottom: 20px;                
+      }
+
+      &:hover {                
+        color: #fff;
+        background: $deepGrey;        
+      }
+
+      @media(orientation:portrait) {
+        width: 90%;
+        text-align: center;
+      }
+
+      svg{
+        margin-right: 10px;
+      }
+    }
+  }
+}

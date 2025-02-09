@@ -1,0 +1,212 @@
+.contato {
+  padding: 100px 0 50px 0;
+  position: relative;
+  z-index: 1;
+  background: #fff;
+}
+@media (orientation: portrait) {
+  .contato {
+    padding: 40px 0;
+  }
+}
+.contato .container {
+  max-width: 550px;
+  text-align: center;
+}
+.contato .container h3 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  color: #0d1117;
+  letter-spacing: -1px;
+  color: #3c3c43;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  max-width: 450px;
+  background: #fff;
+  margin: auto;
+  position: relative;
+  z-index: 10;
+  margin-bottom: -130px;
+  padding: 20px;
+  box-shadow: 0 0 50px 50px rgb(255, 255, 255);
+}
+@media (orientation: portrait) {
+  .contato .container h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+    z-index: 1;
+    margin-bottom: -30px;
+  }
+}
+.contato .container p.chamada {
+  line-height: 28px;
+  font-size: 21px;
+  margin: 0 0 40px 0;
+}
+.contato .info {
+  max-width: 500px;
+  margin: auto;
+  text-align: center;
+  position: relative;
+  z-index: 15;
+}
+.contato .info p {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #3c3c43;
+}
+.contato .info p span {
+  display: inline-block;
+  min-height: 30px;
+  display: flex;
+  align-items: center;
+  max-width: 80%;
+}
+.contato .info p svg, .contato .info p img {
+  margin-right: 5px;
+  margin-bottom: -4px;
+}
+.contato .info .telefone1 img,
+.contato .info .telefone2 img {
+  max-width: 25px;
+}
+.contato .info .telefone1 a,
+.contato .info .telefone2 a {
+  text-decoration: none;
+  color: #000;
+}
+.contato .info .telefone1 a:hover,
+.contato .info .telefone2 a:hover {
+  color: #1f9010;
+}
+@media (orientation: landscape) {
+  .contato .info .telefone1 {
+    display: none;
+  }
+}
+@media (orientation: portrait) {
+  .contato .info .telefone2 {
+    display: none;
+  }
+}
+
+section#marquee {
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+@media (orientation: landscape) {
+  section#marquee {
+    margin-bottom: 90px;
+  }
+}
+section#marquee .container {
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  z-index: 5;
+}
+section#marquee .aSectionMarqueeBox {
+  width: 110%;
+  margin-left: -5%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.97;
+}
+@media (orientation: landscape) {
+  section#marquee .aSectionMarqueeBox {
+    transform: rotate(6deg);
+    height: 70px;
+  }
+}
+section#marquee .aSectionMarqueeBox h2 {
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #0d1117;
+  font-size: 1.25em;
+  font-weight: 300;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  transform: translateX(0);
+  animation: aTextScroll 20s linear infinite;
+}
+@media (orientation: portrait) {
+  section#marquee .aSectionMarqueeBox h2 {
+    font-size: 1.5rem;
+  }
+}
+section#marquee .aSectionMarqueeBox h2 span {
+  padding: 0 25px;
+  display: inline-block;
+}
+section#marquee .bSectionMarqueeBox {
+  width: 110%;
+  margin-left: -5%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0.97;
+}
+@media (orientation: landscape) {
+  section#marquee .bSectionMarqueeBox {
+    transform: rotate(-6deg);
+    margin-top: -75px;
+    height: 70px;
+  }
+}
+section#marquee .bSectionMarqueeBox h2 {
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #0d1117;
+  font-size: 1.25em;
+  font-weight: 300;
+  flex-shrink: 0;
+  padding: 0;
+  margin: 0;
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  transform: translateX(0);
+  animation: bTextScroll 20s linear infinite;
+}
+@media (orientation: portrait) {
+  section#marquee .bSectionMarqueeBox h2 {
+    font-size: 1.5rem;
+  }
+}
+section#marquee .bSectionMarqueeBox h2 span {
+  padding: 0 25px;
+  display: inline-block;
+}
+section#marquee .card {
+  border: 1px solid blue;
+}
+
+@keyframes aTextScroll {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bTextScroll {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
+}/*# sourceMappingURL=Contact.module.css.map */
