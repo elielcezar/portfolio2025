@@ -1,0 +1,14 @@
+[Unit]
+Description=Eliel.dev Backend
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+WorkingDirectory=/var/www/elieldev/back
+ExecStart=/usr/bin/node server.js
+Restart=always
+Environment=NODE_ENV=production
+
+[Install]
+WantedBy=multi-user.target

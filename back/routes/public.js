@@ -36,6 +36,11 @@ router.post('/api/cadastro', async (req, res) => {
 router.post('/api/login', async (req, res) => {
     const user = req.body;
 
+    console.log('Requisição de login recebida:', {
+        body: req.body,
+        headers: req.headers
+    });
+
     const userDB = await prisma.user.findUnique({
         where: { email: user.email }
     });
