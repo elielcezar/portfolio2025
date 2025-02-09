@@ -12,40 +12,29 @@ export default function Login() {
     const inputPassword = useRef();        
 
     async function handleSubmit(event) {
-
         event.preventDefault();
         
-        const formData = new FormData();
-            formData.append('email', inputEmail.current.value);            
-            formData.append('password', inputPassword.current.value); 
-            
-        console.log('Dados recebidos:', inputEmail.current.value);
-        console.log('Dados recebidos:', inputPassword.current.value);
-
         try {            
-            const response = await api.post('/login', formData, {
-                headers: {
-                    'Content-Type': 'application/json'                    
-                }
+            const response = await api.post('/login', {
+                email: inputEmail.current.value,
+                password: inputPassword.current.value
             });
 
-            console.log('Response:', response);
-
             if (response.status === 200 || response.status === 201) {                
-
+                // Salvar o token no localStorage
+                localStorage.setItem('token', response.data.token);
+                
                 inputEmail.current.value = '';                
                 inputPassword.current.value = '';                                
 
                 setConfirmationMessage('Login realizado com sucesso!');
                 setTimeout(() => setConfirmationMessage(''), 5000);
                 
-            } else {
-                throw new Error('Erro ao fazer login');
             }
         } catch (error) {
             console.error('Erro ao fazer login:', error);
-            console.error('Detalhes do erro:', error.response ? error.response.data : error.message);
-            setConfirmationMessage('Email ou senha inválidos.');
+            console.error('Detalhes do erro:', error.response?.data);
+            setConfirmationMessage(error.response?.data?.error || 'Erro ao fazer login');
             setTimeout(() => setConfirmationMessage(''), 5000);
         }
     }

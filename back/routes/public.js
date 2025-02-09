@@ -33,33 +33,48 @@ router.post('/api/cadastro', async (req, res) => {
 });
 
 // LOGIN
-router.post('/api/login', async (req, res) => {
-    const user = req.body;
+router.post('/login', async (req, res) => {
+    try {
+        console.log('Requisição de login recebida:', {
+            body: req.body,
+            headers: req.headers
+        });
 
-    console.log('Requisição de login recebida:', {
-        body: req.body,
-        headers: req.headers
-    });
+        const { email, password } = req.body;
 
-    const userDB = await prisma.user.findUnique({
-        where: { email: user.email }
-    });
+        if (!email || !password) {
+            return res.status(400).json({ error: 'Email e senha são obrigatórios' });
+        }
 
-    if(!userDB){
-        return res.status(400).json({ error: 'Usuario nao encontrado' });
+        const userDB = await prisma.user.findUnique({
+            where: { email }
+        });
+
+        if (!userDB) {
+            return res.status(401).json({ error: 'Usuário não encontrado' });
+        }
+
+        const passwordMatch = await bcrypt.compare(password, userDB.password);
+
+        if (!passwordMatch) {
+            return res.status(401).json({ error: 'Senha inválida' });
+        }
+
+        const token = jwt.sign({ id: userDB.id }, process.env.JWT_SECRET, { expiresIn: '12h' });    
+
+        res.status(200).json({ 
+            message: 'Login realizado com sucesso', 
+            token,
+            user: {
+                id: userDB.id,
+                email: userDB.email,
+                name: userDB.name
+            }
+        });
+    } catch (error) {
+        console.error('Erro no login:', error);
+        res.status(500).json({ error: 'Erro interno do servidor' });
     }
-
-    const passwordMatch = await bcrypt.compare(user.password, userDB.password);
-
-    if(!passwordMatch){
-        return res.status(400).json({ error: 'Senha invalida' });
-    }
-
-    const token = jwt.sign({ id: userDB.id }, JWT_SECRET, { expiresIn: '12h' });    
-
-    res.status(200).json({ message: 'Login realizado com sucesso', token });
-    
-
 }); 
 
 
