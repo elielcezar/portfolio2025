@@ -5,6 +5,7 @@ import Home from './pages/home/Home';
 import AddPortfolio from './pages/addPortfolio/AddPortfolio';
 import ListContent from './pages/listContent/ListContent';
 import Login from './pages/Login/Login';
+import CreateUser from './pages/CreateUser/CreateUser';
 
 function App() {
   return (
@@ -15,9 +16,11 @@ function App() {
         <Route path="admin/novo/portfolio" element={<AddPortfolio />} />
         <Route path="admin/conteudo" element={<ListContent />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/create-user" element={<CreateUser />} />
         {/* Adicione mais rotas conforme necessário */}
       </Routes>
     </Router>
+
   );
 }
 

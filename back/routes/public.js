@@ -77,6 +77,30 @@ router.post('/login', async (req, res) => {
     }
 }); 
 
+// Criar usuario
+router.post('/api/create-users', async (req, res) => {
+    try{
+        const user = req.body;
+
+        const salt = await bcrypt.genSalt(10);
+        const hash = await bcrypt.hash(user.password, salt);
+
+        const userDB = await prisma.user.create({
+            data: {
+                name: user.name,
+                email: user.email,
+                password: hash
+            }
+        });
+
+        res.status(200).json(userDB);
+        
+    }catch(error){
+        res.status(500).json({ error: 'Erro ao criar usuario' });
+    }
+});
+
+
 
 // Rota para buscar todos os portfólios
 /*router.get('/portfolio', async (req, res) => {

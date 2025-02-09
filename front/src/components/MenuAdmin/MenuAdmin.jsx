@@ -11,6 +11,7 @@ export default function MenuAdmin() {
                         <li><a href="/admin/conteudo">Conteúdo</a></li>
                         <li><a href="/admin/novo/portfolio">Novo Portfólio</a></li>
                         <li><a href="/login">Login</a></li>
+                        <li><a href="/create-user">Criar Usuário</a></li>
                         <li><a href="/">Logout</a></li>
                     </ul>
                 </nav>

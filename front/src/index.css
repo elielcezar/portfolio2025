@@ -33,6 +33,7 @@ img {
 form {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 form input {
   width: 100%;
@@ -83,7 +84,6 @@ form select:focus {
   form input[type=tel],
   form textarea,
   form select {
-    padding: 5%;
     width: 100%;
     margin: 0;
   }

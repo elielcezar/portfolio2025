@@ -36,6 +36,7 @@ img {
 form {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 
   input {
     width: 100%;
@@ -76,8 +77,7 @@ form {
       border-color: $purple;
     }
 
-    @media (max-width: 767px) {
-      padding: 5%;
+    @media (max-width: 767px) {      
       width: 100%;
       margin: 0;
     }
