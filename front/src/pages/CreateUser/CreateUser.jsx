@@ -48,7 +48,7 @@ export default function CreateUser() {
 
     return (
         <div className="container">
-            <PageTitle title="Criar Usuário" />
+            <PageTitle title="Criar Usuário--" />
 
             {confirmationMessage ? <p className="confirmation-message">{confirmationMessage}</p> : null}
 

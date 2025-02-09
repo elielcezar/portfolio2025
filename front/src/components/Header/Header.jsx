@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import { useAuth } from '../../context/AuthContext';
 import MenuAdmin from '../MenuAdmin/MenuAdmin';
 import { smoothScroll } from '../../utils/smoothscroll';
 import styles from './Header.module.css';
 import { Github, Linkedin } from 'lucide-react';
 
-const Header = () => {
+const Header = () => {  
+  const { isAuthenticated, logout } = useAuth();
+
   useEffect(() => {
     smoothScroll();
   }, []);
 
   const [isVisible, setIsVisible] = useState(true);
+
   let prevScroll = 0;
 
   useEffect(() => {
@@ -18,7 +22,6 @@ const Header = () => {
       setIsVisible(currentScroll < prevScroll);
       prevScroll = currentScroll;
     };
-
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -39,7 +42,7 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-      <MenuAdmin />
+      {isAuthenticated && <MenuAdmin />}
     </header>
   );
 };

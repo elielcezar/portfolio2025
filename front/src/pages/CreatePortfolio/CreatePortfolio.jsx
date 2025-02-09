@@ -1,11 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import PageTitle from '../../components/PageTitle/PageTitle';
 import api from '../../services/api';
-import styles from './AddPortfolio.module.css';
+import styles from './CreatePortfolio.module.css';
 
-
-
-function CadastroPortfolio() {     
+const CreatePortfolio = () => {
     
     const [confirmationMessage, setConfirmationMessage] = useState('');      
     
@@ -67,7 +65,7 @@ function CadastroPortfolio() {
             
             {confirmationMessage ? <p className="confirmation-message">{confirmationMessage}</p> : null}
 
-            <form>                
+            <form className={styles.form}>                
                 <div className="form-item">                    
                     <input type="text" name="titulo" className="titulo" ref={inputTitulo} placeholder="Título" />
                 </div>                                           
@@ -90,4 +88,4 @@ function CadastroPortfolio() {
   )
 }
 
-export default CadastroPortfolio
+export default CreatePortfolio

@@ -1,8 +1,8 @@
-form {
+.form {
   border: 1px solid;
   display: flex;
   flex-direction: column;
   max-width: 700px;
   padding: 20px;
   margin: auto;
-}/*# sourceMappingURL=AddPortfolio.module.css.map */
+}/*# sourceMappingURL=CreatePortfolio.module.css.map */

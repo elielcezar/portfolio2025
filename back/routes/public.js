@@ -100,16 +100,4 @@ router.post('/api/create-users', async (req, res) => {
     }
 });
 
-
-
-// Rota para buscar todos os portfólios
-/*router.get('/portfolio', async (req, res) => {
-    try {
-        const portfolio = await prisma.portfolio.findMany();
-        res.json(portfolio);
-    } catch (error) {
-        res.status(500).json({ error: 'Erro ao buscar portfólio' });
-    }
-}); */
-
 export default router;

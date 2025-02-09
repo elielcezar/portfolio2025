@@ -1,26 +1,35 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+
 import Header from './components/Header/Header';
 import Home from './pages/home/Home';
-import AddPortfolio from './pages/addPortfolio/AddPortfolio';
-import ListContent from './pages/listContent/ListContent';
+import CreatePortfolio from './pages/CreatePortfolio/CreatePortfolio';
+import Content from './pages/Content/Content';
 import Login from './pages/Login/Login';
 import CreateUser from './pages/CreateUser/CreateUser';
+import NotFound from './pages/NotFound/NotFound';
+
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
   return (
-    <Router>
-      <Header/>      
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="admin/novo/portfolio" element={<AddPortfolio />} />
-        <Route path="admin/conteudo" element={<ListContent />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/create-user" element={<CreateUser />} />
-        {/* Adicione mais rotas conforme necessário */}
-      </Routes>
-    </Router>
-
+    <AuthProvider>
+      <Router>
+        <Header/>      
+        <Routes>
+          <Route path="/" element={<Home />} />          
+          <Route path="/login" element={<Login />} />          
+          
+          {/* Rotas Protegidas */}
+          <Route path="/create-user" element={<ProtectedRoute element={CreateUser} />} />
+          <Route path="/admin/conteudo" element={<ProtectedRoute element={Content} />} />
+          <Route path="/admin/novo/portfolio" element={<ProtectedRoute element={CreatePortfolio} />} />
+          
+          <Route path="*" element={<NotFound />} /> 
+        </Routes>
+      </Router>
+    </AuthProvider>
   );
 }
 

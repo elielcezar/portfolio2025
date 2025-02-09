@@ -6,8 +6,6 @@ const router = express.Router();
 
 
 router.get('/api/usuarios', async (req, res, next) => {
-
-
     try{
         const users = await prisma.user.findMany({
             omit: { password: true }
@@ -17,16 +15,19 @@ router.get('/api/usuarios', async (req, res, next) => {
 
     }catch(error){
         res.status(500).json({ error: 'Erro ao buscar usuarios' });
-    }
-    
-    /*const token = req.headers.authorization;
-    
-    if(!token){
-        return res.status(401).json({ error: 'Token nao informado' });
-    }
-
-    const decoded = jwt.verify(token, JWT_SECRET);*/    
-
+    } 
 }); 
+
+
+
+// Rota para buscar todos os portfólios
+/*router.get('/portfolio', async (req, res) => {
+    try {
+        const portfolio = await prisma.portfolio.findMany();
+        res.json(portfolio);
+    } catch (error) {
+        res.status(500).json({ error: 'Erro ao buscar portfólio' });
+    }
+}); */
 
 export default router;
