@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 export default function Portfolio() {
-  const [activeTab, setActiveTab] = useState('todos');
+  const [activeTab, setActiveTab] = useState('all');
 
   const portfolioItems = [
     {
@@ -16,7 +16,7 @@ export default function Portfolio() {
       id: 2,
       title: "Projeto 2",
       description: "Descrição do projeto e tecnologias utilizadas.",
-      type: "logo"
+      type: "design"
     },
     {
       id: 3,
@@ -27,35 +27,41 @@ export default function Portfolio() {
   ];
 
   let filteredItems;
-  activeTab === 'todos' ? 
+  activeTab === 'all' ? 
     filteredItems = portfolioItems : 
     filteredItems = portfolioItems.filter(item => item.type === activeTab)
 
   return (
     <>
-        <div id="portfolio" className="bg-gray-100 w-full py-10 my-0">
+        <div id="portfolio" className="bg-gray-100 w-full py-10 sm:py-20 my-0 px-10 xl:px-0">
             <div className="w-full lg:max-w-[1100px] lg:mx-auto">
             <h3 className="text-neutral-800 text-2xl font-bold uppercase mb-6">Portfolio</h3>
             
             {/* Abas de navegação */}
             <div className="flex gap-4 mb-8">
                 <button 
-                onClick={() => setActiveTab('todos')}
-                className={`px-6 py-2 ${activeTab === 'todos' ? 'bg-amber-300' : 'bg-white'} text-neutral-800 font-medium rounded-md hover:bg-amber-400 transition-colors`}
+                onClick={() => setActiveTab('all')}
+                className={`px-6 py-2 ${activeTab === 'all' ? 'bg-amber-300' : 'bg-white'} text-neutral-800 font-medium rounded-md hover:bg-amber-400 transition-colors`}
                 >
-                Todos
+                All
                 </button>
                 <button 
                 onClick={() => setActiveTab('site')}
                 className={`px-6 py-2 ${activeTab === 'site' ? 'bg-amber-300' : 'bg-white'} text-neutral-800 font-medium rounded-md hover:bg-amber-100 transition-colors`}
                 >
-                Sites
+                Code
                 </button>
                 <button 
-                onClick={() => setActiveTab('logo')}
+                onClick={() => setActiveTab('design')}
                 className={`px-6 py-2 ${activeTab === 'logo' ? 'bg-amber-300' : 'bg-white'} text-neutral-800 font-medium rounded-md hover:bg-amber-100 transition-colors`}
                 >
-                Logos
+                Design
+                </button>
+                <button 
+                onClick={() => setActiveTab('project')}
+                className={`px-6 py-2 ${activeTab === 'logo' ? 'bg-amber-300' : 'bg-white'} text-neutral-800 font-medium rounded-md hover:bg-amber-100 transition-colors`}
+                >
+                Personal Projects
                 </button>
             </div>
 

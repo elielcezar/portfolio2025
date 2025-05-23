@@ -3,7 +3,7 @@
 export default function Education() {
   return (
     <>
-      <div id="education" className="w-full">
+      <div id="education" className="w-full py-10 px-10 sm:pb-20 xl:px-0">
           <div className="w-full lg:max-w-[1100px] lg:mx-auto text-left">
             <h3 className="text-neutral-800 text-2xl font-bold uppercase mb-6 text-left">Education</h3>
             <div className="items flex flex-col sm:flex-row gap-[16px]">
